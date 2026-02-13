@@ -68,22 +68,30 @@ startPoem();
 setTimeout(()=>{
 showScreen("galleryScreen");
 startGallery();
+startHearts();
 },25000);
 
 });
 
 // POEM
 function startPoem(){
-let poem=`
-You came quietly into my life,<br>
-But stayed like you belonged.<br>
-In chaos you became my calm,<br>
-In silence you were my song.<br>
-Through laughter and storms,<br>
-Through every passing day,<br>
-I found my home in your heart,<br>
-And there I chose to stay.
+let poem = `
+I once thought love was just a dream,<br>
+A fleeting light, a silent gleam.<br>
+But then you came so tenderly,<br>
+And gave its truest form to me.<br><br>
+
+Your laugh became my favorite sound,<br>
+In your warmth, my peace was found.<br>
+Through every joy and mystery,<br>
+You wrote love’s meaning into me.<br><br>
+
+Not in words, but how you move,<br>
+You showed me what it means to love.<br>
+Now every feeling I can see,<br>
+Is simply love — because of you and me.
 `;
+
 document.getElementById("poemText").innerHTML=poem;
 }
 
@@ -138,32 +146,28 @@ document.getElementById("finalLetter").style.opacity="1";
 // Fill the letter
 let letterText = `
 Maybe love doesn’t always arrive with fireworks.<br>
-Maybe sometimes… it just walks in quietly,<br>
-sits beside you,<br>
+Sometimes, it just walks in quietly and sits beside you,<br>
 and suddenly the world feels softer.<br><br>
 
 You didn’t come into my life like a storm.<br>
-You came like calm.<br>
-Like the kind of peace I didn’t even know I was searching for.<br><br>
+You came like calm —<br>
+like the kind of peace I didn’t even know I was searching for.<br><br>
 
 Somewhere between the random laughs,<br>
 the unnecessary fights,<br>
-the silly inside jokes,<br>
-and the moments we didn’t even talk —<br>
+and the silly inside jokes,<br>
 you became my favourite part of everyday life.<br><br>
 
-It’s strange, isn’t it?<br>
-How someone who was once just a person,<br>
-becomes the place you feel safest in.<br><br>
+It’s strange how someone who was once just a person<br>
+can become the place you feel safest in.<br><br>
 
-There are days I wish distance didn’t exist.<br>
-Days I wish I could just reach out<br>
+There are days I wish distance didn’t exist,<br>
+days I wish I could simply reach out<br>
 and pull you into a hug<br>
 without needing time, plans, or a screen.<br><br>
 
 Because sometimes,<br>
-all I want<br>
-is to be close enough<br>
+all I want is to be close enough<br>
 to rest my forehead against yours<br>
 and say nothing at all.<br><br>
 
@@ -172,10 +176,9 @@ you still manage to make everything feel lighter.<br>
 You still make bad days better,<br>
 and good days unforgettable.<br><br>
 
-And if loving someone means<br>
-choosing them again and again,<br>
+And if loving someone means choosing them again and again,<br>
 even on the quiet days,<br>
-even on the difficult ones,<br>
+even on the difficult ones —<br>
 then I choose you.<br><br>
 
 Not just today.<br>
@@ -185,6 +188,7 @@ But always.<br><br>
 Forever yours,<br>
 Annwesh ❤️
 `;
+
 
 document.getElementById("letterText").innerHTML = letterText;
 
@@ -235,4 +239,16 @@ clearInterval(zoomInterval);
 },500);
 
 }
+function startHearts(){
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.innerHTML="💖";
+heart.classList.add("heart");
+heart.style.left=Math.random()*window.innerWidth+"px";
+heart.style.fontSize=(Math.random()*20+15)+"px";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),4000);
+},300);
+}
+
 
