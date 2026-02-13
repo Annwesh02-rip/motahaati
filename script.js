@@ -33,8 +33,6 @@ noBtn.addEventListener("click", function(){
 if(gifStage < 5){
 gifStage++;
 proposalGif.src = "assets/gifs/bubu"+gifStage+".gif";
-
-// YES grows downward
 yesBtn.style.transform="scale("+(1+gifStage*0.5)+")";
 }
 
@@ -44,16 +42,23 @@ noBtn.innerText="You can't catch me anyway";
 }
 });
 
-// Runaway mode
-noBtn.addEventListener("mouseenter", function(){
+function moveNoButton(){
 if(runawayMode){
+
 let maxX = window.innerWidth - noBtn.offsetWidth;
 let maxY = window.innerHeight - noBtn.offsetHeight;
+
 noBtn.style.position="fixed";
 noBtn.style.left=Math.random()*maxX+"px";
 noBtn.style.top=Math.random()*maxY+"px";
 }
-});
+}
+
+// Desktop hover
+noBtn.addEventListener("mouseenter", moveNoButton);
+
+// Mobile touch
+noBtn.addEventListener("touchstart", moveNoButton);
 
 // YES
 yesBtn.addEventListener("click", function(){
@@ -139,11 +144,8 @@ galleryImage.style.opacity="0";
 setTimeout(()=>{
 
 galleryImage.style.display="none";
-
-// Show glass letter box
 document.getElementById("finalLetter").style.opacity="1";
 
-// Fill the letter
 let letterText = `
 Maybe love doesn’t always arrive with fireworks.<br>
 Sometimes, it just walks in quietly and sits beside you,<br>
@@ -189,13 +191,10 @@ Forever yours,<br>
 Annwesh ❤️
 `;
 
-
 document.getElementById("letterText").innerHTML = letterText;
 
 },2000);
 
-
-// AFTER READING → SHOW PHOTO 9
 setTimeout(()=>{
 
 document.getElementById("finalLetter").style.opacity="0";
@@ -210,11 +209,9 @@ startFinalZoom();
 
 }
 
-
 // PHOTO 9 ZOOM
 function startFinalZoom(){
 
-// Make image full screen layer
 galleryImage.style.position = "fixed";
 galleryImage.style.top = "50%";
 galleryImage.style.left = "50%";
@@ -239,6 +236,8 @@ clearInterval(zoomInterval);
 },500);
 
 }
+
+// HEARTS
 function startHearts(){
 setInterval(()=>{
 let heart=document.createElement("div");
@@ -250,5 +249,4 @@ document.body.appendChild(heart);
 setTimeout(()=>heart.remove(),4000);
 },300);
 }
-
 
