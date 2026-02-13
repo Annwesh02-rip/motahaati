@@ -1,0 +1,143 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#ff9a9e,#ff4d6d);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+color:white;
+}
+
+/* SCREEN SYSTEM */
+.screen {
+display:none;
+flex-direction:column;
+align-items:center;
+text-align:center;
+width:100%;
+animation:fadeIn 0.8s ease;
+}
+
+.active { display:flex; }
+
+/* GIF */
+.gif {
+width:220px;
+border-radius:20px;
+margin-bottom:20px;
+}
+
+/* INPUT */
+input {
+padding:10px;
+border-radius:20px;
+border:none;
+margin:10px;
+}
+
+/* BUTTONS */
+button {
+padding:14px 30px;
+border-radius:30px;
+border:none;
+cursor:pointer;
+transition:0.3s;
+font-size:18px;
+}
+
+#yesBtn {
+background:#ff4d6d;
+color:white;
+transform-origin: top center;
+}
+
+#noBtn {
+background:white;
+color:#ff4d6d;
+position:relative;
+}
+
+.btn-row {
+display:flex;
+gap:20px;
+}
+
+/* GALLERY */
+.gallery {
+width:80vw;
+height:70vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.gallery img {
+max-width:80vw;
+max-height:70vh;
+width:auto;
+height:auto;
+object-fit:contain;
+border-radius:20px;
+transition:opacity 2s, transform 1s ease;
+}
+
+/* POEM DROP */
+.drop {
+opacity:0;
+transform:translateY(-50px);
+animation:drop 2s forwards;
+}
+
+@keyframes drop {
+to { opacity:1; transform:translateY(0); }
+}
+
+/* HEARTS */
+.heart {
+position:fixed;
+top:-20px;
+animation:fall 4s linear infinite;
+}
+
+@keyframes fall {
+0% {transform:translateY(0);}
+100% {transform:translateY(100vh);}
+}
+
+/* FIX GALLERY SCREEN */
+#galleryScreen{
+justify-content:center;
+align-items:center;
+flex-direction:column;
+position:relative;
+}
+
+/* LETTER BOX FLOATING ABOVE */
+.letterBox{
+width:80vw;
+height:60vh;
+background:rgba(255,255,255,0.15);
+backdrop-filter: blur(10px);
+border-radius:20px;
+padding:25px;
+overflow-y:auto;
+opacity:0;
+transition:1.5s ease;
+
+position:absolute;
+top:10vh;
+left:50%;
+transform:translateX(-50%);
+
+z-index:10;
+}
+
+/* LETTER TEXT */
+.letterContent{
+font-size:20px;
+line-height:1.8;
+text-align:center;
+}

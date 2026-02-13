@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mota Haati 💖</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio id="askMusic" loop>
+<source src="assets/music/ask.mp3.mp3">
+</audio>
+
+<audio id="loveMusic" loop>
+<source src="assets/music/love.mp3.mp3">
+</audio>
+
+<section id="passwordScreen" class="screen active">
+<img src="assets/gifs/bubu1.gif" class="gif">
+<h2>Hello Mota Haati 🐘💕</h2>
+<p>Unlock your gift ❤️ since <b>the day I became urs</b></p>
+<input type="password" id="passInput">
+<button onclick="checkPass()">Unlock</button>
+<p id="error"></p>
+</section>
+
+<section id="proposalScreen" class="screen">
+<img id="proposalGif" src="assets/gifs/bubu1.gif" class="gif">
+<h1 id="question">Will you be my Valentine? 💕</h1>
+<div class="btn-row">
+<button id="yesBtn">YES 💖</button>
+<button id="noBtn">NO 🙈</button>
+</div>
+</section>
+
+<section id="poemScreen" class="screen">
+<img src="assets/gifs/bubu_yes.gif" class="gif">
+<h2 class="drop" id="poemText"></h2>
+</section>
+
+<section id="galleryScreen" class="screen">
+<div class="gallery">
+<img id="galleryImage" src="assets/photos/photo1.jpg.jpg">
+</div>
+<div id="finalLetter" class="letterBox">
+<div class="letterContent" id="letterText"></div>
+</div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
